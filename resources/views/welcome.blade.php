@@ -75,6 +75,7 @@
                 <tr>
                 <th scope="col">#</th>
                 <th scope="col">Couleur</th>
+                <th scope="col">Voiture</th>
                 </tr>
             </thead>
             <tbody>
@@ -82,11 +83,16 @@
                     <tr>
                         <th scope="row">{{$item->id}}</th>
                         <td>{{$item->color}}</td>
+                        <td>
+                            @foreach ($item->cars as $item)
+                                <p>{{$item->marque}} {{$item->annee}}</p>
+                            @endforeach
+                        </td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
 
-    
+
 @endsection
