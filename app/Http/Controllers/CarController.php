@@ -35,7 +35,12 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $store = new Car;
+	    $store->marque = $request->marque;
+	    $store->annee = $request->annee;
+	    $store->color_id = $request->color_id;
+	    $store->save();
+	    return redirect()->back();
     }
 
     /**
